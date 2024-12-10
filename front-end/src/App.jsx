@@ -6,6 +6,12 @@ import AdminLayout from "./components/admin/Layout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminOrders from "./pages/admin/AdminOrders";
 import AdminProducts from "./pages/admin/AdminProducts";
+import ShoppingLayout from "./components/shopping/ShoppingLayout";
+import NotFound from "./components/not-found";
+import Account from "./pages/shopping/Account";
+import Checkout from "./pages/shopping/Checkout";
+import Home from "./pages/shopping/Home";
+import Listing from "./pages/shopping/Listing";
 
 function App() {
   return (
@@ -20,6 +26,13 @@ function App() {
           <Route path="orders" element={<AdminOrders />} />
           <Route path="products" element={<AdminProducts />} />
         </Route>
+        <Route path="/shop" element={<ShoppingLayout />}>
+          <Route path="account" element={<Account />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="home" element={<Home />} />
+          <Route path="listing" element={<Listing />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
